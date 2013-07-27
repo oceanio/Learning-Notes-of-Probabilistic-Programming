@@ -9,14 +9,13 @@ Notes on Chapter 1
 
 ## 贝叶斯推断
 
-P( A | X ) = & \\frac{ P(X | A) P(A) } {P(X) }  
-            ∝ P(X|A)P(A)  ( ∝ is proportional to )
+           ∝ P(X|A)P(A)  ( ∝ is proportional to )
 
  P(X)=P(X|A)P(A)+P(X|∼A)P(∼A)
 
 
-bernoulli分布: 0-1分布  
-beta分布: 作为bernoulli分布的密度函数，先验共轭函数  
+**bernoulli分布**: 0-1分布  
+**beta分布**: 作为bernoulli分布的密度函数，先验共轭函数  
 
 ## 概率分布
 

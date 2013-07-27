@@ -8,9 +8,9 @@ Notes on Chapter 1
 > The Frequentist inference function would return a number, whereas the Bayesian function would return probabilities.  
 
 ## 贝叶斯推断
-![bayesian framework](images/Tex2Img_1374940374.png)
+![bayesian framework](images/Tex2Img_1374940374.png)  
 
- P(X)=P(X|A)P(A)+P(X|∼A)P(∼A)
+![bayesian framework](images/Tex2Img_1374940698.png)  
 
 
 **bernoulli分布**: 0-1分布  

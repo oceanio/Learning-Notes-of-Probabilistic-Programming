@@ -33,9 +33,9 @@ Poisson分布:
 
 常见的连续值分布  
 Exponential分布:  
-![bayesian framework](images/Tex2Img_1374967386.png)  
+![bayesian framework](images/Tex2Img_1374967386.jpg)  
 
-![bayesian framework](images/Tex2Img_1374967538.png)  
+![bayesian framework](images/Tex2Img_1374967538.jpg)  
 
 ![bayesian framework](images/exp.png) 
 

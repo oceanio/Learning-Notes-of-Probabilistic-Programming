@@ -1,4 +1,4 @@
-The Philosophy of Bayesian Inference
+### The Philosophy of Bayesian Inference ###
 
 先验概率：我们对于某个事物的belief，称为prior probability
 后验概率：在先验概率基础上，经过一些evidence之后，updated belief称为posterior probability

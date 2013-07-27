@@ -26,9 +26,10 @@ Notes on Chapter 1
 常见的离散值分布:  
 Poisson分布:  
 ![bayesian framework](images/Tex2Img_1374940913.png)  
+
 ![bayesian framework](images/Tex2Img_1374941106.png)  
 
-泊松.png
+![bayesian framework](images/泊松.png)  
 
 常见的连续值分布
 Exponential分布，fZ(z|λ)=λe−λz,z≥0  E[Z|λ]=1/λ

@@ -24,7 +24,7 @@ Notes on Chapter 1
 连续值的分布称为 probability density function (PDF)  
 
 常见的离散值分布:  
-Poisson分布，P(Z=k) = λke−λ /k! , k=0,1,2,…, 参数λ，E(Z|λ) = λ  
+Poisson分布:  ![bayesian framework](images/Tex2Img_1374940913.png)  参数λ，E(Z|λ) = λ  
 
 泊松.png
 

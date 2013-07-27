@@ -1,11 +1,12 @@
-The Philosophy of Bayesian Inference
+# The Philosophy of Bayesian Inference
 
-先验概率：我们对于某个事物的belief，称为prior probability
-后验概率：在先验概率基础上，经过一些evidence之后，updated belief称为posterior probability
+*先验概率* ：我们对于某个事物的belief，称为prior probability
+*后验概率* ：在先验概率基础上，经过一些evidence之后，updated belief称为posterior probability
 The Frequentist inference function would return a number, whereas the Bayesian function would return probabilities. 
-贝叶斯推断
 
-P(A|X) = P(X|A)P(A) / P(X)
+# 贝叶斯推断
+
+P( A | X ) = & \\frac{ P(X | A) P(A) } {P(X) }
             ∝ P(X|A)P(A)  ( ∝ is proportional to )
 
  P(X)=P(X|A)P(A)+P(X|∼A)P(∼A)

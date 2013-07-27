@@ -8,8 +8,7 @@ Notes on Chapter 1
 > The Frequentist inference function would return a number, whereas the Bayesian function would return probabilities.  
 
 ## 贝叶斯推断
-
-           ∝ P(X|A)P(A)  ( ∝ is proportional to )
+![bayesian framework](images/Tex2Img_1374940374.png)
 
  P(X)=P(X|A)P(A)+P(X|∼A)P(∼A)
 

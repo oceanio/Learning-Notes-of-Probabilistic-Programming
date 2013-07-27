@@ -31,10 +31,13 @@ Poisson分布:
 
 ![bayesian framework](images/泊松.png)  
 
-常见的连续值分布
-Exponential分布，fZ(z|λ)=λe−λz,z≥0  E[Z|λ]=1/λ
+常见的连续值分布  
+Exponential分布:  
+![bayesian framework](images/Tex2Img_1374967386.png)  
 
-exp.png
+![bayesian framework](images/Tex2Img_1374967538.png)  
+
+![bayesian framework](images/exp.png) 
 
 ## Inferring behavior from text-message data
 

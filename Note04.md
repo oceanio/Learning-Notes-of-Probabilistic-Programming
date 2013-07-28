@@ -15,8 +15,7 @@ The special case when N=1 corresponds to the Bernoulli distribution. There is an
 
 In the interview process for each student, the student flips a coin, hidden from the interviewer. The student agrees to answer honestly if the coin comes up heads. Otherwise, if the coin comes up tails, the student (secretly) flips the coin again, and answers "Yes, I did cheat" if the coin flip lands heads, and "No, I did not cheat", if the coin flip lands tails. This way, the interviewer does not know if a "Yes" was the result of a guilty plea, or a Heads on a second coin toss. Thus privacy is preserved and the researchers receive honest answers.  
 
-P("Yes")=P(Heads on first coin)P(cheater)+P(Tails on first coin)P(Heads on second coin)  
-\             = P(cheater)*0.5 + 0.25
+P("Yes")=P(Heads on first coin)P(cheater)+P(Tails on first coin)P(Heads on second coin) = P(cheater)*0.5 + 0.25
 
 	# 对于是否作弊假定均匀分布
 	p = mc.Uniform( "freq_cheating", 0, 1) 

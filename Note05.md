@@ -27,10 +27,10 @@ its variance is equal to the inverse of τ: Var(X|μ,τ)=1/τ
 	beta = mc.Normal( "beta", 0, 0.001, value = 0 ) 
 	alpha = mc.Normal( "alpha", 0, 0.001, value = 0 )
 
-### 经过MC过程，获得采样值，该如何解读？*Confidence Interval*  
+### 经过MC过程，获得采样值，该如何解读？__Confidence Interval__  
 
-> *mquantiles*，分位数  
-> Even-sized population  
+**mquantiles**，分位数  
+> **Even-sized population**  
 
 > Consider an ordered population of 10 data values {3, 6, 7, 8, 8, 10, 13, 15, 16, 20}  
 
@@ -38,7 +38,7 @@ its variance is equal to the inverse of τ: Var(X|μ,τ)=1/τ
 > - The rank of the second quartile (same as the median) is 10×(2/4) = 5, which is an integer, while the number of values (10) is an even number, so the average of both the fifth and sixth values is taken—that is (8+10)/2 = 9, though any value from 8 through to 10 could be taken to be the median.  
 > - The rank of the third quartile is 10×(3/4) = 7.5, which rounds up to 8. The eighth value in the population is 15.  
 
-> Odd-sized population  
+> **Odd-sized population**  
 
 > Consider an ordered population of 11 data values {3, 6, 7, 8, 8, 9, 10, 13, 15, 16, 20}.  
 

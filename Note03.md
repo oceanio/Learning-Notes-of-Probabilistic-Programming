@@ -1,4 +1,4 @@
-Notes on Chapter 3  
+Notes on Chapter 2  
 ========================================
 
 ## Bayesian A/B testing
@@ -14,7 +14,7 @@ Notes on Chapter 3
 
 根据observation data，求出A和B的后验概率分布，以及delta = P_A - P_B  
  
-![bayesian framework](images/ABtest.png)  
+![](images/ABtest.png)  
 
 因为B的数据较少，其分布的形状更胖，表示less certain than A
 delta > 0的面积大，表示PA > PB的概率更大；根据采样，我们能够获得PA > PB的概率和PA < PB的概率。  

@@ -13,33 +13,36 @@ Notes on Chapter 3
 
 ![](images/2cluster.png)  
 
-1.  For each data point, choose cluster 1 with probability p, else choose cluster 2.  
-2.  Draw a random variate from a Normal distribution with parameters μi and σi where i was chosen in step 1.  
+1.  For each data point, choose cluster 1 with probability p, else choose cluster 2.
+2.  Draw a random variate from a Normal distribution with parameters μi and σi where i was chosen in step 1.
 3.  Repeat.  
 
+具体代码::  
 
-	# 假定两个cluster的数据都是正态分布
-	observations = mc.Normal( "obs", center_i, tau_i, value = data, observed = True )
+    # 假定两个cluster的数据都是正态分布
+    observations = mc.Normal( "obs", center_i, tau_i, value = data, observed = True )
+    
+    # size=2，返回2个序列
+    taus = 1.0/mc.Uniform( "stds", 0, 100, size= 2)**2 
+    centers = mc.Normal( "centers", [120, 190], [0.01, 0.01], size =2 )
 
-	# size=2，返回2个序列
-	taus = 1.0/mc.Uniform( "stds", 0, 100, size= 2)**2 
-	centers = mc.Normal( "centers", [120, 190], [0.01, 0.01], size =2 )
-	# 下面2个函数，根据assignment的0或1，在上面2个序列中选择一个填入center_i和tau_i
-	@mc.deterministic 
-	def center_i( assignment = assignment, centers = centers ):
-	        return centers[ assignment] 
-
-	@mc.deterministic
-	def tau_i( assignment = assignment, taus = taus ):
-	        return taus[ assignment] 
-
-	# Categorical stochastic variable
-	# Its parameter is a k-length array of probabilities that must sum to one 
-	# and its value attribute is a integer between 0 and k−1 randomly chosen according to the crafted array of probabilities.
-	# (In our case k=2)
-	assignment = mc.Categorical( "assignment", [p, 1-p], size = data.shape[0] )
-	# 每个数据点属于cluster 1 和cluster 2的概率
-	p = mc.Uniform( "p", 0, 1)
+    # 下面2个函数，根据assignment的0或1，在上面2个序列中选择一个填入center_i和tau_i
+    @mc.deterministic 
+    def center_i( assignment = assignment, centers = centers ):
+        return centers[ assignment] 
+    
+    @mc.deterministic
+    def tau_i( assignment = assignment, taus = taus ):
+        return taus[ assignment] 
+    
+    # Categorical stochastic variable
+    # Its parameter is a k-length array of probabilities that must sum to one 
+    # and its value attribute is a integer between 0 and k−1 randomly chosen according to the crafted array of probabilities.
+    # (In our case k=2)
+    assignment = mc.Categorical( "assignment", [p, 1-p], size = data.shape[0] )
+    
+    # 每个数据点属于cluster 1 和cluster 2的概率
+    p = mc.Uniform( "p", 0, 1)
 
 画出前5万次采样的结果  
 

@@ -46,7 +46,7 @@ the rate of convergence:
 4.  Ratio: Rank comments by the ratio of upvotes to total number of votes (upvotes plus downvotes). This solves the temporal issue, such that new comments who score well can be considered Top just as likely as older comments, provided they have many upvotes to total votes. The problem here is that a comment with a single upvote (ratio = 1.0) will beat a comment with 999 upvotes and 1 downvote (ratio = 0.999), but clearly the latter comment is more likely to be better.  
 
 
-1.  Skewed data: The vast majority of comments have very few votes, hence there will be many comments with ratios near the extremes (see the "triangular plot" in the above Kaggle dataset), effectively skewing our distribution to the extremes. One could try to only use comments with votes greater than some threshold. Again, problems are encountered. There is a tradeoff between number of comments available to use and a higher threshold with associated ratio precision.
+1.  Skewed data: The vast majority of comments have very few votes, hence there will be many comments with ratios near the extremes (see the "triangular plot" in the above Kaggle dataset), effectively skewing our distribution to the extremes. One could try to only use comments with votes greater than some threshold. Again, problems are encountered. There is a tradeoff between number of comments available to use and a higher threshold with associated ratio precision.  
 2.  Biased data: Reddit is composed of different subpages, called subreddits. Two examples are r/aww, which posts pics of cute animals, and r/politics. It is very likely that the user behaviour towards comments of these two subreddits are very different: visitors are likely friendly and affectionate in the former, and would therefore upvote comments more, compared to the latter, where comments are likely to be controversial and disagreed upon. Therefore not all comments are the same.
   
 代码:  
@@ -80,7 +80,10 @@ u is the number of upvotes, and d is the number of downvotes.
 a = 1 + u  
 b = 1 + N - u = 1 + d  
 使用正态分布去估计x  
-mu = a/(a + b)  
-lamda = sqrt(ab/(a+b)**2(a+b+1))  
-0.05 = PHI((x-mu)/lamda)  
-PHI(-1.65) = 0.05  
+![](images/Tex2Img_1374979931.png)  
+
+![](images/Tex2Img_1374980061.png)  
+
+![](images/Tex2Img_1374980114.png)  
+
+![](images/Tex2Img_1374980168.png)  

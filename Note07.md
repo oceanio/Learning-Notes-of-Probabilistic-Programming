@@ -26,7 +26,7 @@ credible interval表达了我们对于true value的区间的不确定性；confi
 
 > When I was a child my mother used to occasionally surprise me by ordering a jar of chocolate-chip cookies to be delivered by mail. The delivery company stocked four different kinds of cookie jars -- type A, type B, type C, and type D, and they were all on the same truck and you were never sure what type you would get. Each jar had exactly 100 cookies, but the feature that distinguished the different cookie jars was their respective distributions of chocolate chips per cookie. If you reached into a jar and took out a single cookie uniformly at random, these are the probability distributions you would get on the number of chips:  
 
-![](images/2bgvJ.png)  
+> ![](images/2bgvJ.png)  
 
 > A type-A cookie jar, for example, has 70 cookies with two chips each, and no cookies with four chips or more! A type-D cookie jar has 70 cookies with one chip each. Notice how each vertical column is a probability mass function -- the conditional probability of the number of chips you'd get, given that the jar = A, or B, or C, or D, and each column sums to 100.  
 
@@ -38,7 +38,7 @@ credible interval表达了我们对于true value的区间的不确定性；confi
 
 > So after doing that procedure, I ended up with these intervals:  
 
-![](images/OaGoo.png)  
+> ![](images/OaGoo.png)  
 
 > For example, if the number of chips on the cookie I draw is 1, my confidence interval will be {B,C,D}. If the number is 4, my confidence interval will be {B,C}. Notice that since each column sums to 70% or greater, then no matter which column we are truly in (no matter which jar the deliveryman dropped off), the interval resulting from this procedure will include the correct jar with at least 70% probability.  
 
@@ -48,7 +48,7 @@ credible interval表达了我们对于true value的区间的不确定性；confi
 
 > "With that assumption, now let's look at the joint probabilities of the whole event -- the jar type and the number of chips you draw from your first cookie," she said, drawing the following table:  
 
-![](images/jarnchips.png)  
+> ![](images/jarnchips.png)  
 
 > Notice that the whole table is now a probability mass function -- meaning the whole table sums to 100%.  
 
@@ -60,13 +60,13 @@ credible interval表达了我们对于true value的区间的不确定性；confi
 
 > "Let's say we know that you got 3 chips. Then we can ignore all the other rows in the table, and simply treat that row as a probability mass function. We'll need to scale up the probabilities proportionately so each row sums to 100, though." She did:  
 
-![](images/chipdensity.png)  
+> ![](images/chipdensity.png)  
 
 > "Notice how each row is now a p.m.f., and sums to 100%. We've flipped the conditional probability from what you started with -- now it's the probability of the man having dropped off a certain jar, given the number of chips on the first cookie."  
 
 > "Interesting," I said. "So now we just circle enough jars in each row to get up to 70% probability?" We did just that, making these credibility intervals:  
 
-![](images/bci.png)  
+> ![](images/bci.png)  
 
 > Each interval includes a set of jars that, a posteriori, sum to 70% probability of being the true jar.  
 
@@ -76,11 +76,11 @@ credible interval表达了我们对于true value的区间的不确定性；confi
 
 > Confidence intervals:  
 
-![](images/OaGoo.png)  
+> ![](images/OaGoo.png)  
 
 > Credibility intervals:  
 
-![](images/bci.png)  
+> ![](images/bci.png)  
 
 > "See how crazy your confidence intervals are?" said Bayesia. "You don't even have a sensible answer when you draw a cookie with zero chips! You just say it's the empty interval. But that's obviously wrong -- it has to be one of the four types of jars. How can you live with yourself, stating an interval at the end of the day when you know the interval is wrong? And ditto when you pull a cookie with 3 chips -- your interval is only correct 41% of the time. Calling this a '70%' confidence interval is bullshit."  
 
@@ -106,4 +106,5 @@ credible interval表达了我们对于true value的区间的不确定性；confi
 ## The Folk Theorem of Statistical Computing
 
 > If you are having computational problems, probably your model is wrong.  
+
 For this reason, it is best to carefully choose the priors. Often, lack of covergence or evidence of samples crowding to boundaries implies something is wrong with the chosen priors.

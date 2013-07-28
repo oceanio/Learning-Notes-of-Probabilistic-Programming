@@ -29,15 +29,15 @@ the rate of convergence:
 ## 期望值和概率值  
 假设函数： 
 
-![](images/Tex2Img_1374977436.png)  
+![](images/Tex2Img_1374977436.jpg)  
 
 那么： 
 
-![](images/Tex2Img_1374977541.png)  
+![](images/Tex2Img_1374977541.jpg)  
 
 所以： 
 
-![](images/Tex2Img_1374977609.png)  
+![](images/Tex2Img_1374977609.jpg)  
 
 ## How Reddit ranks comments
 1.  Popularity: A comment is considered good if it has many upvotes. A problem with this model is that a comment with hundreds of upvotes, but thousands of downvotes. While being very popular, the comment is likely more controversial than best.  
@@ -50,7 +50,7 @@ the rate of convergence:
 2.  Biased data: Reddit is composed of different subpages, called subreddits. Two examples are r/aww, which posts pics of cute animals, and r/politics. It is very likely that the user behaviour towards comments of these two subreddits are very different: visitors are likely friendly and affectionate in the former, and would therefore upvote comments more, compared to the latter, where comments are likely to be controversial and disagreed upon. Therefore not all comments are the same.
   
 代码:  
-  
+
     # up和down的分布符合二项式分布
     observations = mc.Binomial( "obs", N, upvote_ratio, value = upvotes, observed = True) 
      

@@ -17,6 +17,7 @@ Notes on Chapter 3
 2.  Draw a random variate from a Normal distribution with parameters μi and σi where i was chosen in step 1.  
 3.  Repeat.  
 
+
 	# 假定两个cluster的数据都是正态分布
 	observations = mc.Normal( "obs", center_i, tau_i, value = data, observed = True )
 
@@ -53,6 +54,7 @@ Notes on Chapter 3
 ## Cluster Investigation  
 
 	assignment = mc.Categorical("assignment", [p, 1-p], size = data.shape[0] ) 
+
 	assign_trace = mcmc.trace("assignment")[:]      ## 采样集合，每个采样是size = data.shape[0]的2个序列，[p和1-p]的序列
 
 	assign_trace.mean(axis=0)        ## 1表示属于cluster 2，均值就是n/N，属于cluster2的概率，axis=0是采样的轴
@@ -78,8 +80,9 @@ Thus the two standard deviations aredependent on each other: if one is small, th
 ![](images/Tex2Img_1374973637.png)  
 
  	x = 175
+	v = p_trace*norm_pdf(x, loc = center_trace[:,0], scale = std_trace[:,0] ) \
+	        > (1-p_trace)*norm_pdf(x, loc = center_trace[:,1], scale = std_trace[:,1] ) 
 
-	v = p_trace*norm_pdf(x, loc = center_trace[:,0], scale = std_trace[:,0] ) > (1-p_trace)*norm_pdf(x, loc = center_trace[:,1], scale = std_trace[:,1] ) 
 	print "Probability of belonging to cluster 1:", v.mean()
 
  
@@ -87,8 +90,10 @@ Thus the two standard deviations aredependent on each other: if one is small, th
 ### Using MAP to improve convergence
 
 In fact, poor starting values can prevent any convergence, or significantly slow it down. Ideally, we would like to have the chain start at the peak of our landscape, as this is exactly where the posterior distributions exist. Hence, if we started at the "peak", we could avoid a lengthy burn-in period and incorrect inference. Generally, we call this "peak" the maximum a posterior or, more simply, the MAP.  
+
 	map_ = mc.MAP( model )
 	map_.fit()
+
 From my experience, I use the default, but if my convergence is slow or not guaranteed, I experiment with Powell's method, by calling fit(method='fmin_powell').   
 
 The MAP can also be used as a solution to the inference problem, as mathematically it is the most likely value for the unknowns. But as mentioned before, this location ignores the uncertainty and doesn't return a distribution.  

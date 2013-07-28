@@ -27,26 +27,24 @@ its variance is equal to the inverse of τ: Var(X|μ,τ)=1/τ
 	beta = mc.Normal( "beta", 0, 0.001, value = 0 ) 
 	alpha = mc.Normal( "alpha", 0, 0.001, value = 0 )
 
-## 经过MC过程，获得采样值，该如何解读？  
+### 经过MC过程，获得采样值，该如何解读？*Confidence Interval*  
 
-### Confidence Interval
+> *mquantiles*，分位数  
+> Even-sized population  
 
-mquantiles，分位数  
-Even-sized population  
+> Consider an ordered population of 10 data values {3, 6, 7, 8, 8, 10, 13, 15, 16, 20}  
 
-Consider an ordered population of 10 data values {3, 6, 7, 8, 8, 10, 13, 15, 16, 20}  
+> - The rank of the first quartile is 10×(1/4) = 2.5, which rounds up to 3, meaning that 3 is the rank in the population (from least to greatest values) at which approximately 1/4 of the values are less than the value of the first quartile. The third value in the population is 7.  
+> - The rank of the second quartile (same as the median) is 10×(2/4) = 5, which is an integer, while the number of values (10) is an even number, so the average of both the fifth and sixth values is taken—that is (8+10)/2 = 9, though any value from 8 through to 10 could be taken to be the median.  
+> - The rank of the third quartile is 10×(3/4) = 7.5, which rounds up to 8. The eighth value in the population is 15.  
 
-- The rank of the first quartile is 10×(1/4) = 2.5, which rounds up to 3, meaning that 3 is the rank in the population (from least to greatest values) at which approximately 1/4 of the values are less than the value of the first quartile. The third value in the population is 7.  
-- The rank of the second quartile (same as the median) is 10×(2/4) = 5, which is an integer, while the number of values (10) is an even number, so the average of both the fifth and sixth values is taken—that is (8+10)/2 = 9, though any value from 8 through to 10 could be taken to be the median.  
-- The rank of the third quartile is 10×(3/4) = 7.5, which rounds up to 8. The eighth value in the population is 15.  
+> Odd-sized population  
 
-Odd-sized population  
+> Consider an ordered population of 11 data values {3, 6, 7, 8, 8, 9, 10, 13, 15, 16, 20}.  
 
-Consider an ordered population of 11 data values {3, 6, 7, 8, 8, 9, 10, 13, 15, 16, 20}.  
-
-- The first quartile is determined by 11×(1/4) = 2.75, which rounds up to 3, meaning that 3 is the rank in the population (from least to greatest values) at which approximately 1/4 of the values are less than the value of the first quartile. The third value in the population is 7.  
-- The second quartile value (same as the median) is determined by 11×(2/4) = 5.5, which rounds up to 6. Therefore 6 is the rank in the population (from least to greatest values) at which approximately 2/4 of the values are less than the value of the second quartile (or median). The sixth value in the population is 9.  
-- The third quartile value for the original example above is determined by 11×(3/4) = 8.25, which rounds up to 9. The ninth value in the population is 15.  
+> - The first quartile is determined by 11×(1/4) = 2.75, which rounds up to 3, meaning that 3 is the rank in the population (from least to greatest values) at which approximately 1/4 of the values are less than the value of the first quartile. The third value in the population is 7.  
+> - The second quartile value (same as the median) is determined by 11×(2/4) = 5.5, which rounds up to 6. Therefore 6 is the rank in the population (from least to greatest values) at which approximately 2/4 of the values are less than the value of the second quartile (or median). The sixth value in the population is 9.  
+> - The third quartile value for the original example above is determined by 11×(3/4) = 8.25, which rounds up to 9. The ninth value in the population is 15.  
 
 ![](images/ci.png)  
 For example, at 65 degrees, we can be 95% sure that the probability of defect lies between 0.25 and 0.75.  

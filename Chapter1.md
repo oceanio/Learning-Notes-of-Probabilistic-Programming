@@ -33,6 +33,7 @@ Poisson分布:
 
 常见的连续值分布  
 Exponential分布:  
+
 ![Exponential Distribution](images/Tex2Img_1374967386.jpg)  
 
 ![Exponential Distribution](images/Tex2Img_1374967538.jpg)  

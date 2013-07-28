@@ -27,7 +27,8 @@ its variance is equal to the inverse of τ: Var(X|μ,τ)=1/τ
 	beta = mc.Normal( "beta", 0, 0.001, value = 0 ) 
 	alpha = mc.Normal( "alpha", 0, 0.001, value = 0 )
 
-### 经过MC过程，获得采样值，该如何解读？__Confidence Interval__  
+### 经过MC过程，获得采样值，该如何解读？
+__Confidence Interval__  
 
 **mquantiles**，分位数  
 > **Even-sized population**  

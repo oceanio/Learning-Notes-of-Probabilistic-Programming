@@ -28,10 +28,15 @@ the rate of convergence:
 
 ## 期望值和概率值  
 假设函数： 
+
 ![](images/Tex2Img_1374977436.png)  
+
 那么： 
+
 ![](images/Tex2Img_1374977541.png)  
+
 所以： 
+
 ![](images/Tex2Img_1374977609.png)  
 
 ## How Reddit ranks comments
@@ -40,9 +45,11 @@ the rate of convergence:
 3.  Time adjusted: Consider using Difference divided by the age of the comment. This creates a rate, something like difference per second, or per minute. An immediate counter example is, if we use per second, a 1 second old comment with 1 upvote would be better than a 100 second old comment with 99 upvotes. One can avoid this by only considering at least t second old comments. But what is a good t value? Does this mean no comment younger than t is good? We end up comparing unstable quantities with stable quantities (young vs. old comments).
 4.  Ratio: Rank comments by the ratio of upvotes to total number of votes (upvotes plus downvotes). This solves the temporal issue, such that new comments who score well can be considered Top just as likely as older comments, provided they have many upvotes to total votes. The problem here is that a comment with a single upvote (ratio = 1.0) will beat a comment with 999 upvotes and 1 downvote (ratio = 0.999), but clearly the latter comment is more likely to be better.  
 
+
 1.  Skewed data: The vast majority of comments have very few votes, hence there will be many comments with ratios near the extremes (see the "triangular plot" in the above Kaggle dataset), effectively skewing our distribution to the extremes. One could try to only use comments with votes greater than some threshold. Again, problems are encountered. There is a tradeoff between number of comments available to use and a higher threshold with associated ratio precision.
 2.  Biased data: Reddit is composed of different subpages, called subreddits. Two examples are r/aww, which posts pics of cute animals, and r/politics. It is very likely that the user behaviour towards comments of these two subreddits are very different: visitors are likely friendly and affectionate in the former, and would therefore upvote comments more, compared to the latter, where comments are likely to be controversial and disagreed upon. Therefore not all comments are the same.
   
+代码:  
   
     # up和down的分布符合二项式分布
     observations = mc.Binomial( "obs", N, upvote_ratio, value = upvotes, observed = True) 

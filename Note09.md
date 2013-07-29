@@ -3,29 +3,30 @@ Notes on Chapter 5
 
 ## Loss Functions
 
-squared-error loss  
+### squared-error loss  
 
 ![](images/Tex2Img_1375003014.png)  
 
-asymmetric squared-error loss function  
+### asymmetric squared-error loss function  
 
 ![](images/Tex2Img_1375098097.png)  
 
 This represents that estimating a value larger than the true estimate is preferable to estimating a value below.  
 
-absolute-loss  
+
+### absolute-loss  
 
 ![](images/Tex2Img_1375098253.png)  
 
-zero-one loss  
+### zero-one loss  
 
-![](images/Tex2Img_1375098487.png)  
+![](images/Tex2Img_1375098487.jpg)  
 
-log-loss  
+### log-loss  
 
 ![](images/Tex2Img_1375098576.png)  
 
-other loss functions:  
+### other loss functions:  
 
 ![](images/Tex2Img_1375098686.png)  
 

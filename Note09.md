@@ -40,4 +40,16 @@ This function is bounded between 0 and 1 and reflects that the user is indiffere
 
 ![](images/Tex2Img_1375099707.png)  
 
++ If using the mean-squared loss, the Bayes action is the mean the posterior distribution
++ Whereas the median of the posterior distribution minimizes the expected absolute-loss.
++ In fact, it is possible to show that the MAP estimate is the solution to using a loss function that shrinks to the zero-one loss.  
 
+For a specific trading signal, call it $x$, the distribution of possible returns has the form:
+
+$$R_i(x) =  \alpha_i + \beta_ix + \epsilon $$
+
+where $\epsilon \sim \text{Normal}(0, 1/\tau_i) $ and $i$ indexes our posterior samples. We wish to find the solution to 
+
+$$ \arg \min_{r} \;\;E_{R(x)}\left[ \; L(R(x), r) \; \right] $$
+
+according to the loss given above. This $r$ is our Bayes action for trading signal $x$. Below we plot the Bayes action over different trading signals.
